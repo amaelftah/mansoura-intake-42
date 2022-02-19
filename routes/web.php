@@ -15,7 +15,7 @@ use App\Http\Controllers\TestController; //equals require
 */
 
 Route::get('/', function () {
-   return 1;
+   return 'hello world';
 });
 
 Route::get('/test',[TestController::class, 'testAction']);
