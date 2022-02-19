@@ -18,7 +18,14 @@ Route::get('/', function () {
 });
 
 Route::get('/test', function () {
-    return view('test');
+    $users = [
+        ['id' => 1, 'name' => 'ahmed'],
+        ['id' => 2, 'name' => 'mohamed'],
+    ];
+    return view('test',[
+        'users' => $users,
+        'greeting' => 'Hello this is some var from web.php',
+    ]);
 });
 
 Route::get('/hello', function(){
