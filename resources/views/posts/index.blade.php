@@ -4,7 +4,7 @@
 
 @section('content')
         <div class="text-center mt-5">
-            <a href="/posts/create" class="btn btn-success ">Create Post</a>
+            <a href="{{route('posts.create')}}" class="btn btn-success ">Create Post</a>
 
         </div>
         <table class="table">
@@ -24,7 +24,7 @@
                     <td>{{$post['title']}}</td>
                     <td>{{$post['posted_by']}}</td>
                     <td>{{$post['created_at']}}</td>
-                    <td><a href="/posts/{{$post['id']}}" class="btn btn-info">View</a></td>
+                    <td><a href="{{route('posts.show', $post['id'])}}" class="btn btn-info">View</a></td>
                 </tr>
             @endforeach
             </tbody>
