@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TestController; //equals require
 
 /*
 |--------------------------------------------------------------------------
@@ -17,16 +18,7 @@ Route::get('/', function () {
    return 1;
 });
 
-Route::get('/test', function () {
-    $users = [
-        ['id' => 1, 'name' => 'ahmed'],
-        ['id' => 2, 'name' => 'mohamed'],
-    ];
-    return view('test',[
-        'users' => $users,
-        'greeting' => 'Hello this is some var from web.php',
-    ]);
-});
+Route::get('/test',[TestController::class, 'testAction']);
 
 Route::get('/hello', function(){
     
