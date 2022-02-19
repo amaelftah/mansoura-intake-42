@@ -42,12 +42,12 @@
               </tr>
             </thead>
             <tbody>
-            @foreach ($users as $user)
+            @foreach ($posts as $post)
                 <tr>
-                    <th scope="row">{{$user['id']}}</th>
-                    <td>{{$user['title']}}</td>
-                    <td>{{$user['posted_by']}}</td>
-                    <td>{{$user['created_at']}}</td>
+                    <th scope="row">{{$post['id']}}</th>
+                    <td>{{$post['title']}}</td>
+                    <td>{{$post['posted_by']}}</td>
+                    <td>{{$post['created_at']}}</td>
                     <td><a href="#" class="btn btn-info">View</a></td>
                 </tr>
             @endforeach

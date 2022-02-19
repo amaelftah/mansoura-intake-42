@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\TestController; //equals require
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,7 +18,7 @@ Route::get('/', function () {
    return 'hello world';
 });
 
-Route::get('/test',[TestController::class, 'testAction']);
+Route::get('/posts',[PostController::class, 'index']);
 
 Route::get('/hello', function(){
     
