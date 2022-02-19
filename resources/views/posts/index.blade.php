@@ -24,7 +24,7 @@
                     <td>{{$post['title']}}</td>
                     <td>{{$post['posted_by']}}</td>
                     <td>{{$post['created_at']}}</td>
-                    <td><a href="#" class="btn btn-info">View</a></td>
+                    <td><a href="/posts/{{$post['id']}}" class="btn btn-info">View</a></td>
                 </tr>
             @endforeach
             </tbody>
