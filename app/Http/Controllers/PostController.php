@@ -27,4 +27,17 @@ class PostController extends Controller
     {
         return $postId;
     }
+
+    public function store()
+    {
+        //fetch request data
+        $requestData = request()->all();
+        // dd($requestData);
+
+        //store request data in db
+
+        //redirection to posts.index
+        // return to_route('posts.index'); in laravel 9 only
+        return redirect()->route('posts.index');
+    }
 }
