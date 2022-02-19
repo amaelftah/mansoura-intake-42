@@ -4,7 +4,7 @@
 
 @section('content')
         <div class="text-center mt-5">
-            <a href="#" class="btn btn-success ">Create Post</a>
+            <a href="/posts/create" class="btn btn-success ">Create Post</a>
 
         </div>
         <table class="table">
