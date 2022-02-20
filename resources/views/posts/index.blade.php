@@ -20,11 +20,11 @@
             <tbody>
             @foreach ($posts as $post)
                 <tr>
-                    <th scope="row">{{$post['id']}}</th>
-                    <td>{{$post['title']}}</td>
-                    <td>{{$post['posted_by']}}</td>
-                    <td>{{$post['created_at']}}</td>
-                    <td><a href="{{route('posts.show', $post['id'])}}" class="btn btn-info">View</a></td>
+                    <th scope="row">{{$post->id}}</th>
+                    <td>{{$post->title}}</td>
+                    <td>{{$post->posted_by}}</td>
+                    <td>{{$post->created_at}}</td>
+                    <td><a href="{{route('posts.show', $post->id)}}" class="btn btn-info">View</a></td>
                 </tr>
             @endforeach
             </tbody>
