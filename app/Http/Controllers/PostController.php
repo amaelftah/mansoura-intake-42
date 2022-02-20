@@ -47,6 +47,7 @@ class PostController extends Controller
         // Post::create([
         //     'title' => $requestData['title'],
         //     'description' => $requestData['description'],
+        //     'user_id' => $requestData['post_creator']
         // ]);
 
         Post::create($requestData);
