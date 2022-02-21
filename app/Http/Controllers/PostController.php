@@ -39,6 +39,15 @@ class PostController extends Controller
 
     public function store()
     {
+        //logic to validate the request data
+        request()->validate([
+            'title' => ['required', 'min:3'],
+            'description' => ['required', 'min:10'],
+        ],[
+            'title.required' => 'Overrided Required Message',
+            'title.min' => 'Changed the min rule default message for title'
+        ]);
+
         //fetch request data
         $requestData = request()->all();
         // dd($requestData);
