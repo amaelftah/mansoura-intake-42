@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StorePostRequest;
 use Illuminate\Http\Request;
 use App\Models\Post;
 use App\Models\User;
@@ -37,16 +38,16 @@ class PostController extends Controller
         return $postId;
     }
 
-    public function store()
+    public function store(StorePostRequest $request)
     {
         //logic to validate the request data
-        request()->validate([
-            'title' => ['required', 'min:3'],
-            'description' => ['required', 'min:10'],
-        ],[
-            'title.required' => 'Overrided Required Message',
-            'title.min' => 'Changed the min rule default message for title'
-        ]);
+        // request()->validate([
+        //     'title' => ['required', 'min:3'],
+        //     'description' => ['required', 'min:10'],
+        // ],[
+        //     'title.required' => 'Overrided Required Message',
+        //     'title.min' => 'Changed the min rule default message for title'
+        // ]);
 
         //fetch request data
         $requestData = request()->all();
