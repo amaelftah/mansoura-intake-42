@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use Laravel\Socialite\Facades\Socialite;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,3 +30,21 @@ Route::get('/hello', function(){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+Route::get('/auth/redirect', function () {
+   return Socialite::driver('github')->redirect();
+})->name('github.login');
+
+Route::get('/auth/callback', function () {
+
+   $user = Socialite::driver('github')->user();
+
+   //write some logic to log me in my system
+dd($user);
+   // $user->token
+});
+
+
+Route::get('get-all-github-issues',function(){
+   //some logic to make request to GET /issues on github using the token
+});
